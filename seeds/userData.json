@@ -1,17 +1,17 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
+    "username": "SalliwalliTheChamp",
+    "password": "password12345",
+    "balance": 10
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "username": "JoJoBoxin",
+    "password": "12341234",
+    "balance": 10
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "username": "Chewbacca",
+    "password": "superdupersecret",
+    "balance": 10
   }
 ]
