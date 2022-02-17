@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS gitlucky_db;
-CREATE DATABASE gitlucky_db;
+DROP DATABASE IF EXISTS casino_db;
+CREATE DATABASE casino_db;
