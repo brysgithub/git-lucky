@@ -2,24 +2,20 @@
 
 ## GET
 
-/ - Home page - Basic info about the app
+/home - Home page - Prompt user to play. Divert to login/register or dashboard from here
 
 /login - Where the user logs in
 
 /register - Where the user creates an account
 
 /dashboard
-    - Where the user can see their existing Flashcards
-    - Where the user can link to create a flashcard
+    - Where the can see their wins and losses
+    - Where the user can view and edit their profile
 
-/newflashcard - Where the users can create a new flashcard
-
-/quiz - Where the user can interact with their falshcards and test themselves
+/game/:id - Where the chosen game is loaded
 
 ## POST
 
 /api/users - CREATE a new user
 
 /api/users/login - CREATE logged in session data
-
-/api/flashcards - CREATE new flash cards
