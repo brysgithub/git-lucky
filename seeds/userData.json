@@ -2,16 +2,19 @@
   {
     "username": "SalliwalliTheChamp",
     "password": "password12345",
-    "balance": 10
+    "balance": 10,
+    "avatar_seed": "VGy9v0QETr"
   },
   {
     "username": "JoJoBoxin",
     "password": "12341234",
-    "balance": 10
+    "balance": 10,
+    "avatar_seed": "vCNgthfwzP"
   },
   {
     "username": "Chewbacca",
     "password": "superdupersecret",
-    "balance": 10
+    "balance": 10,
+    "avatar_seed": "qklE1VHk6s"
   }
 ]

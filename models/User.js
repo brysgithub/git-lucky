@@ -48,7 +48,7 @@ User.init(
         return updatedUserData;
       },
       beforeCreate: async (seedGen) => {
-        seedGen.avatar_seed = seed_generator(28);
+        seedGen.avatar_seed = seed_generator(10);
         return seedGen;
       },
     },
