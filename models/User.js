@@ -30,6 +30,11 @@ User.init(
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    // Used to generate a random avatar on user creation
+    avatar_seed: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   },
   {
@@ -41,6 +46,10 @@ User.init(
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
+      },
+      beforeCreate: async (seedGen) => {
+        seedGen.avatar_seed = seed_generator(28);
+        return seedGen;
       },
     },
     sequelize,

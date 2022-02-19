@@ -19,4 +19,14 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  seed_generator: (length) => {
+    var seed = '';
+    var library = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var libraryLength = library.length;
+
+    for ( var i = 0; i < length; i++ ) {
+      result += library.charAt(Math.floor(Math.random() * libraryLength));
+    }
+    return seed;
+  },
 };
