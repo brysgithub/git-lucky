@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const helpers = require('../utils/helpers.js')
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -48,7 +49,7 @@ User.init(
         return updatedUserData;
       },
       beforeCreate: async (seedGen) => {
-        seedGen.avatar_seed = seed_generator(10);
+        seedGen.avatar_seed = helpers.seed_generator(10);
         return seedGen;
       },
     },
