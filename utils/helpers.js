@@ -24,7 +24,7 @@ module.exports = {
     var library = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     for ( var i = 0; i < length; i++ ) {
-      result += library.charAt(Math.floor(Math.random() * library.length));
+      seed += library.charAt(Math.floor(Math.random() * library.length));
     }
     return seed;
   },
