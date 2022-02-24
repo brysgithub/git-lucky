@@ -48,10 +48,10 @@ User.init(
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       },
-      beforeCreate: async (seedGen) => {
-        seedGen.avatar_seed = helpers.seed_generator(10);
-        return seedGen;
-      },
+      // beforeCreate: async (seedGen) => {
+      //   seedGen.avatar_seed = helpers.seed_generator(10);
+      //   return seedGen;
+      // },
     },
     sequelize,
     timestamps: false,
