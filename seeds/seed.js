@@ -1,7 +1,8 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Transaction } = require('../models');
 
 const userData = require('./userData.json');
+const transactionData = require('./transactionData.json');
 
 /**
  * Leaving for future reference
@@ -21,12 +22,7 @@ const seedDatabase = async () => {
    * Leaving for future reference
    */
 
-  // for (const project of projectData) {
-  //   await Project.create({
-  //     ...project,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
+  const transactions = await Transaction.bulkCreate(transactionData);
 
   process.exit(0);
 };
