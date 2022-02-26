@@ -30,8 +30,10 @@ const coinflip = async (event) => {
     result = -1;
   }
 
-  const response = await fetch(`/api/transactions/:${result}`, {
+  const response = await fetch(`/api/transactions/`, {
     method: 'POST',
+    body: JSON.stringify({ result }),
+    headers: { 'Content-Type': 'application/json' },
   });
 
   if (response.ok) {
