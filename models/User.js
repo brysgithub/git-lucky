@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-const helpers = require('../utils/helpers.js');
+// const helpers = require('../utils/helpers.js');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -31,7 +31,7 @@ User.init(
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
-     }//,
+    }//,
     // // Used to generate a random avatar on user creation
     // avatar_seed: {
     //   type: DataTypes.STRING,

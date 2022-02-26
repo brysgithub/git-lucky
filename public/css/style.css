@@ -1,21 +1,18 @@
 body {
     background-color: #E7402a;
-    /* padding: 0;
+    padding: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; */
+    justify-content: space-evenly;
 }
-/* 
+
 #primary-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    
-
 }
 
 #textarea {
@@ -38,7 +35,6 @@ body {
 #sign-inBtn {
     background-color: #45b348;
     border-radius: 25px
-    
 }
 
 .footer {
