@@ -31,12 +31,12 @@ User.init(
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    // Used to generate a random avatar on user creation
-    avatar_seed: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    }
+     }//,
+    // // Used to generate a random avatar on user creation
+    // avatar_seed: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // }
   },
   {
     hooks: {
@@ -48,10 +48,10 @@ User.init(
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       },
-      beforeCreate: async (seedGen) => {
-        seedGen.avatar_seed = helpers.seed_generator(10);
-        return seedGen;
-      },
+      // beforeCreate: async (seedGen) => {
+      //   seedGen.avatar_seed = helpers.seed_generator(10);
+      //   return seedGen;
+      // },
     },
     sequelize,
     timestamps: false,
