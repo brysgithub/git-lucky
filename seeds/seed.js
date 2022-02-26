@@ -7,7 +7,7 @@ const transactionData = require('./transactionData.json');
 /**
  * Leaving for future reference
  */
- 
+
 // const projectData = require('./projectData.json');
 
 const seedDatabase = async () => {
