@@ -1,14 +1,17 @@
 [
   {
     "username": "SalliwalliTheChamp",
-    "password": "password12345"
+    "password": "password12345",
+    "balance": 15
   },
   {
     "username": "JoJoBoxin",
-    "password": "12341234"
+    "password": "12341234",
+    "balance": 15
   },
   {
     "username": "Chewbacca",
-    "password": "superdupersecret"
+    "password": "superdupersecret",
+    "balance": 15
   }
 ]
