@@ -1,7 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-// const helpers = require('../utils/helpers.js');
+
+const seed_generator = (length) => {
+  var seed = '';
+  var library = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for ( var i = 0; i < length; i++ ) {
+    seed += library.charAt(Math.floor(Math.random() * library.length));
+  }
+  return seed;
+};
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -32,17 +41,18 @@ User.init(
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    }//,
+    },
 
-    // // Used to generate a random avatar on user creation
-    // avatar_seed: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // }
+    // Used to generate a random avatar on user creation
+    avatar_seed: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
+        newUserData.avatar_seed = seed_generator(10);
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
@@ -53,10 +63,6 @@ User.init(
         );
         return updatedUserData;
       },
-      // beforeCreate: async (seedGen) => {
-      //   seedGen.avatar_seed = helpers.seed_generator(10);
-      //   return seedGen;
-      // },
     },
     sequelize,
     timestamps: false,
