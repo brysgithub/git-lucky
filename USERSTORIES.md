@@ -1,16 +1,16 @@
-# Flashcards User Stories
+# Git-Lucky User Stories
 
 AS a USER
-I WANT to be able to CREATE Flashcards
+I WANT to be able to CREATE bets with my firends
 
 AS a User
-I WANT to be able to view all of their created flash cards
-SO they can see what they've made
+I WANT to be able to create an account 
+SO that my wins and losses can be tracked accordingly
 
 AS a User
-I WANT to be able to test myself by viewing single flash card questions
-SO THAT I can see if I know the answer
+I WANT to be able to choose between betting options
+SO THAT I can see if I can get the right answer
 
 AS a User
-I WANT TO be able to see the flash card answer
-SO THAT I can verify if my answer was correct
+I WANT TO be able to see the winning bet
+SO THAT I can verify if my answer was correct and it can be added to my loss-win record

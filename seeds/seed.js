@@ -6,7 +6,7 @@ const userData = require('./userData.json');
 /**
  * Leaving for future reference
  */
- 
+
 // const projectData = require('./projectData.json');
 
 const seedDatabase = async () => {
