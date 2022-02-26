@@ -28,17 +28,10 @@ User.init(
         len: [8],
       },
     },
-<<<<<<< HEAD
-    balance: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    }, //,
-=======
     // balance: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
     //  }//,
->>>>>>> 2f011311214db15cae8c53c301570301420d57c0
     // // Used to generate a random avatar on user creation
     // avatar_seed: {
     //   type: DataTypes.STRING,
