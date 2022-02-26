@@ -28,15 +28,15 @@ User.init(
         len: [8],
       },
     },
-    balance: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    // Used to generate a random avatar on user creation
-    avatar_seed: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    }
+    // balance: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //  }//,
+    // // Used to generate a random avatar on user creation
+    // avatar_seed: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // }
   },
   {
     hooks: {
