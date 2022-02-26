@@ -1,12 +1,16 @@
 const router = require('express').Router();
-const { Transaction } = require('../../models');
+const { Transaction, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post("/:amount", withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
     const transaction = await Transaction.create({
-        user_id: req.session.user_id,
-        result: req.params.amount,
+        ...req.body,
+        user_id: req.session.user_id
     });
+
+    const user = await User.findByPk(req.session.user_id);
+    user.balance += parseInt(req.body.result);
+    await user.save();
 
     res.json(transaction);
 });
