@@ -1,5 +1,6 @@
 const User = require('./User');
 const Transaction = require('./Transaction');
+const Statistics = require('./Statistics.js');
 // const Game = require('./Game');
 
 User.hasMany(Transaction, {
@@ -8,6 +9,15 @@ User.hasMany(Transaction, {
 });
 
 Transaction.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+User.hasOne(Statistics, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Statistics.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
@@ -21,4 +31,4 @@ Transaction.belongsTo(User, {
 //     onDelete: 'CASCADE'
 // });
 
-module.exports = { User, Transaction };
+module.exports = { User, Transaction, Statistics };
