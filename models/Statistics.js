@@ -39,6 +39,16 @@ Statistics.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
+    },
+    biggest_win: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+    },
+    biggest_loss: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
     }
   },
   {
