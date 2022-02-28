@@ -1,35 +1,38 @@
-<div class=''>
-  <img src='../img/Poker-chip.png' />
+<div class="columns">
+  {{!-- Column One with image and title --}}
+  <div class="column">
+    <div class="center"> 
+      <h1>Git-Lucky</h1>
+      <img src='../img/Poker-chip.png' />
+    </div>
+  </div>
+  {{!-- Column Two with login input --}}
+  <div class="column">
+    <div class="center">
+      <form class='login-form'>
+
+        <div id='textarea' class='field'>
+          <div class='control'>
+            <input class='input' id='username-login' type='text' placeholder='USERNAME' />
+          </div>
+        </div>
+
+        <div id='textarea' class='field'>
+          <div class='control'>
+            <input class='input' id='password-login' type='password' placeholder='PASSWORD' />
+          </div>
+        </div>
+
+        <div id='primary-btn'>
+          <button id='sign-inBtn' class='button is-primary'>SIGN IN</button>
+        </div>
+      </form>
+      <script src='/js/login.js'></script>
+    </div>
+  </div>
 </div>
-<div class=''>
-<form class='login-form'>
-
-
-  <div id='textarea' class='field'>
-    <div class='control'>
-      <input class='input' id='username-login' type='text' placeholder='USERNAME' />
-    </div>
-  </div>
-
-  <div id='textarea' class='field'>
-    <div class='control'>
-      <input class='input' id='password-login' type='password' placeholder='PASSWORD' />
-    </div>
-  </div>
-
-  <div id='primary-btn'>
     {{!-- <button id='create-btn' class='button is-primary'>CREATE NEW ACCOUNT</button>
     <br />
     OR
     <br />
     <br /> --}}
-    <button id='sign-inBtn' class='button is-primary'>SIGN IN</button>
-  </div>
-</form>
-</div>
-
-<div class=''>
-  <h1>Git-Lucky</h1>
-</div>
-
-<script src='/js/login.js'></script>
