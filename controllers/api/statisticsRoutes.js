@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 const { Transaction, Statistics } = require('../../models');
 
-router.post('/update', async (req, res) => {
+router.post('/update', withAuth, async (req, res) => {
   try {
     const userHistory = await Transaction.findAll({
         attributes: [ 'result' ],
