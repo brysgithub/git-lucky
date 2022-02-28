@@ -42,6 +42,11 @@ const coinflip = async (event) => {
     alert(response.statusText);
   }
 
+  const response = await fetch(`/api/statistics/update`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+});
+
   // Play spinner animation
   // Display the result to the user
 };
