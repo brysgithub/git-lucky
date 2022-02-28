@@ -1,14 +1,30 @@
-
-WE MADE IT! :)
-<div class="control">
-  <label class="radio">
-    <input type="radio" name="answer" value="Heads" checked>
-    Heads
-  </label>
-  <label class="radio">
-    <input type="radio" name="answer" value="Tails">
-    Tails
-  </label>
+<progress id="winLossBar" class="progress" value="15" max="100">15%</progress>
+<div class="columns">
+  <div class="column">
+    Losses: <span id="lossesText" class="is-medium"></span>
+  </div>
+  <div class="column">
+    <div class="field">
+      <label class="label">Wager</label>
+      <div class="control">
+        <input id="amount" class="input" type="text" placeholder="Amount">
+      </div>
+    </div>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="answer" value="Heads" checked>
+        Heads
+      </label>
+      <label class="radio">
+        <input type="radio" name="answer" value="Tails">
+        Tails
+      </label>
+    </div>
+  </div>
+  <div class="column">
+    Wins: <span id="winsText" class="is-medium"></span>
+  </div>
 </div>
 <button id="start" class="button is-warning">start</button>
 <script src="./js/coinflip.js"></script>
+<script src="./js/loadData.js"></script>

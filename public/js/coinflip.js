@@ -2,8 +2,9 @@ const coinflip = async (event) => {
   event.preventDefault();
 
   const radioButtons = document.querySelectorAll('input[name="answer"]');
-
+  const amount = document.querySelector('#amount').value;
   let selectedFlip;
+
   for (const radioButton of radioButtons) {
     if (radioButton.checked) {
       selectedFlip = radioButton.value;
@@ -24,10 +25,10 @@ const coinflip = async (event) => {
 
   if (flip === selectedFlip) {
     console.log('WINNER');
-    result = 1;
+    result = amount;
   } else {
     console.log('YOU LOSE');
-    result = -1;
+    result = amount * -1;
   }
 
   const response = await fetch(`/api/transactions/`, {
@@ -41,7 +42,23 @@ const coinflip = async (event) => {
   } else {
     alert(response.statusText);
   }
+  
+  const updateResponse = await fetch(`/api/statistics/update`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
 
+  const data = await updateResponse.json();
+
+  const winLossBarEl = document.querySelector('#winLossBar');
+  const winsTextEl = document.querySelector('#winsText');
+  const lossesTextEl = document.querySelector('#lossesText');
+
+  winLossBarEl.value = data.losses;
+  winLossBarEl.max = data.wins + data.losses;
+  winsTextEl.textContent = data.wins;
+  lossesTextEl.textContent = data.losses;
+  
   // Play spinner animation
   // Display the result to the user
 };

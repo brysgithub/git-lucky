@@ -41,8 +41,8 @@ User.init(
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 50,
     },
-
     // Used to generate a random avatar on user creation
     avatar_seed: {
       type: DataTypes.STRING,
