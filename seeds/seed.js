@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { User, Transaction, Statistics } = require('../models');
 
 const userData = require('./userData.json');
-const transactionData = require('./transactionData.json');
+//const transactionData = require('./transactionData.json');
 const statisticsData = require('./statisticsData.json');
 
 /**
@@ -25,7 +25,7 @@ const seedDatabase = async () => {
    * Leaving for future reference
    */
 
-  const transactions = await Transaction.bulkCreate(transactionData);
+  //const transactions = await Transaction.bulkCreate(transactionData);
 
   process.exit(0);
 };
