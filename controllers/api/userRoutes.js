@@ -18,6 +18,15 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/balance', async (req, res) => {
+  try {
+    const userData = await User.findByPk( req.session.user_id );
+    res.status(200).json(userData.balance);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -32,9 +41,6 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-    console.log(
-      `${userData.password}    ${req.body.password}   ${validPassword}`
-    );
     if (!validPassword) {
       res
         .status(400)

@@ -13,8 +13,8 @@
   {{#if logged_in}}
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      <a class="navbar-item" href="/homepage">
+        <img src="/img/Poker-chip.png">
       </a>
 
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -26,9 +26,6 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a href="/homepage" class="navbar-item">
-          Home
-        </a>
         <a href="/profile" class="navbar-item">
           Profile
         </a>
@@ -39,6 +36,10 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
+          Balance: $<span id="userBalanceText"></span>.00
+        </div>
+        <script src="./js/loadBalance.js"></script>
+        <div class="navbar-item">
           <button id="logout" class="button is-danger">LOGOUT</button>
           <script src="./js/logout.js"></script>
         </div>
@@ -47,15 +48,6 @@
     </div>
   </nav>
   {{/if}}
-  <div class="">
-    {{!-- <img src="" class="" alt="" /> --}}
-
-    <div class="">
-
-      {{{body}}}
-      
-    </div>
-
-  </div>
+  {{{body}}}
 </body>
 </html>

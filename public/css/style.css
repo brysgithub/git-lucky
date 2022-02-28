@@ -4,9 +4,16 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+}
+
+.column {
+    text-align: center;
+    position: relative;
+}
+
+.center {
+    position: relative;
+    transform: translate(0%, 50%);
 }
 
 #primary-btn {
@@ -16,12 +23,6 @@ body {
 }
 
 #textarea {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pic {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,8 +39,8 @@ body {
 }
 
 .footer {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #E7402a;
+    background-color: #E7402a; */
 }
