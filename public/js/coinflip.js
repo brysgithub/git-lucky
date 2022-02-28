@@ -2,6 +2,7 @@ const coinflip = async (event) => {
   event.preventDefault();
 
   const radioButtons = document.querySelectorAll('input[name="answer"]');
+  const amount = document.querySelector('#amount').value;
 
   let selectedFlip;
   for (const radioButton of radioButtons) {
@@ -24,10 +25,10 @@ const coinflip = async (event) => {
 
   if (flip === selectedFlip) {
     console.log('WINNER');
-    result = 1;
+    result = amount;
   } else {
     console.log('YOU LOSE');
-    result = -1;
+    result = amount * -1;
   }
 
   const response = await fetch(`/api/transactions/`, {
@@ -41,8 +42,8 @@ const coinflip = async (event) => {
   } else {
     alert(response.statusText);
   }
-
-  const response = await fetch(`/api/statistics/update`, {
+  
+  const updateResponse = await fetch(`/api/statistics/update`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
 });

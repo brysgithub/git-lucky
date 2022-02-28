@@ -6,7 +6,7 @@ router.post('/update', async (req, res) => {
     const userHistory = await Transaction.findAll({
         attributes: [ 'result' ],
         where: {
-            user_id: req.body.user_id,
+            user_id: req.session.user_id,
         }
     });
 
@@ -74,7 +74,7 @@ router.post('/update', async (req, res) => {
             "lossStreak": lossStreak
         };
         console.log(data);
-        let userStatistics = await Statistics.findOne({ where: { user_id: req.body.user_id }});
+        let userStatistics = await Statistics.findOne({ where: { user_id: req.session.user_id }});
         userStatistics.total_wins = data.wins;
         userStatistics.total_losses = data.losses;
         userStatistics.biggest_win = data.maxWin;
@@ -82,13 +82,11 @@ router.post('/update', async (req, res) => {
         userStatistics.longest_win_streak = data.winStreak;
         userStatistics.longest_lose_streak = data.lossStreak;
         await userStatistics.save();
-        
     }
-
-
     res.status(200).json(data);
   } catch (err) {
     res.status(400).json(err);
+    console.log(err);
   }
 });
 
