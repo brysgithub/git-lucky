@@ -1,9 +1,58 @@
 const router = require('express').Router();
+const { json } = require('express/lib/response');
 const { Transaction, Statistics } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
         const userStatistics = await Statistics.findOne({ where: { user_id: req.session.user_id }});
+        res.status(200).json(userStatistics);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+router.get('/biggestWin', async (req, res) => {
+    try {
+        const userStatistics = await Statistics.findAll({
+            attributes: ['user_id', 'biggest_win'],
+            order: [['biggest_win', 'DESC']]
+        });
+        res.status(200).json(userStatistics);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+router.get('/biggestLoss', async (req, res) => {
+    try {
+        const userStatistics = await Statistics.findAll({
+            attributes: ['user_id', 'biggest_loss'],
+            order: [['biggest_loss', 'ASC']]
+        });
+        res.status(200).json(userStatistics);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+router.get('/longestWin', async (req, res) => {
+    try {
+        const userStatistics = await Statistics.findAll({
+            attributes: ['user_id', 'longest_win_streak'],
+            order: [['longest_win_streak', 'DESC']]
+        });
+        res.status(200).json(userStatistics);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+router.get('/longestLose', async (req, res) => {
+    try {
+        const userStatistics = await Statistics.findAll({
+            attributes: ['user_id', 'longest_lose_streak'],
+            order: [['longest_lose_streak', 'DESC']]
+        });
         res.status(200).json(userStatistics);
     } catch (err) {
         res.status(400).json(err);
