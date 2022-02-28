@@ -6,8 +6,6 @@ async function loadData() {
 
     const data = await response.json();
 
-    console.log(data);
-
     const winLossBarEl = document.querySelector('#winLossBar');
     const winsTextEl = document.querySelector('#winsText');
     const lossesTextEl = document.querySelector('#lossesText');

@@ -59,6 +59,15 @@ const coinflip = async (event) => {
   winsTextEl.textContent = data.wins;
   lossesTextEl.textContent = data.losses;
   
+  const updateBalance = await fetch(`/api/users/balance`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  const balance = await updateBalance.json();
+
+  document.querySelector('#userBalanceText').textContent = balance; 
+  
   // Play spinner animation
   // Display the result to the user
 };
