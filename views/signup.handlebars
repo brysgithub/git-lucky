@@ -9,26 +9,25 @@
   {{!-- Column Two with login input --}}
   <div class="column">
     <div class="center">
-      <form class='login-form'>
-
+      <form class='signup-form'>
         <div id='textarea' class='field'>
           <div class='control'>
-            <input class='input' id='username-login' type='text' placeholder='USERNAME' />
+            <input class='input' id='username-signup' type='text' placeholder='USERNAME' />
           </div>
         </div>
 
         <div id='textarea' class='field'>
           <div class='control'>
-            <input class='input' id='password-login' type='password' placeholder='PASSWORD' />
+            <input class='input' id='password-signup' type='password' placeholder='PASSWORD' />
           </div>
         </div>
 
-        <div id='primary-btn'>
-          <button id='sign-inBtn' class='button is-primary'>SIGN IN</button>
+        <div id='secondary-btn'>
+          <button id='sign-inBtn' class='button is-primary'>CREATE NEW ACCOUNT</button>
         </div>
       </form>
-      <script src='/js/login.js'></script>
-      <a id='signUpRedirect' class='button is-primary' href="/signup">SIGN UP</a>
+      <script src='/js/signup.js'></script>
+      <a id='loginRedirect' class='button is-link' href="/login">GO BACK</a>
     </div>
   </div>
 </div>
