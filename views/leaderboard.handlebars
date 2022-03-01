@@ -1,0 +1,86 @@
+ {{!-- <div class="column">
+    <article class="listHeader">Biggest Win</article>
+  </div>
+    <ul class="people_list">
+        
+    </ul>
+  <div class="column">
+    <article class="listHeader">Biggest Loss</article>
+  </div>
+    <ul class="people_list">
+        {{#each people}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+  <div class="column">
+    <article class="listHeader">MONEY</article>
+    <ul class="people_list">
+        {{#each people}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+  </div>
+  <div class="column">
+    <article class="listHeader">Longest Win Streak</article>
+    <ul class="people_list">
+        {{#each people}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+  </div>
+  <div class="column">
+    <article class="listHeader">Longest Lose Streak</article>
+    <ul class="people_list">
+        {{#each people}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+  </div> --}}
+
+<div class="columns">
+    <div class="column">
+        <article class="listHeader">Biggest Win</article>
+        <ol>
+            {{#each biggestWin}}
+            <li>{{this.user_id}}    {{this.biggest_win}}</li>
+            {{/each}}
+        </ol>
+    </div>
+    <div class="column">
+        <article class="listHeader">Biggest Loss</article>
+        <ol>
+            {{#each biggestLoss}}
+            <li>{{this.user_id}}    {{this.biggest_loss}}</li>
+            {{/each}}
+        </ol>
+    </div>
+    <div class="column">
+        <article class="listHeader">Longest Win Streak</article>
+        <ol>
+            {{#each longestWin}}
+            <li>{{this.user_id}}    {{this.longest_win_streak}}</li>
+            {{/each}}
+        </ol>
+    </div>
+    <div class="column">
+        <article class="listHeader">Longest Lose Streak</article>
+        <ol>
+            {{#each longestLose}}
+            <li>{{this.user_id}}    {{this.longest_lose_streak}}</li>
+            {{/each}}
+        </ol>
+    </div>
+</div>
+
+{{!-- <div class="columns">
+    {{#each leaderboards as |leaderboard|}}
+        <div class="column">
+            <article class="listHeader">Biggest Win</article>
+            {{> leaderboard-list}}
+        </div>
+    {{/each}}
+</div> --}}
+
+{{!-- Biggest Win, Biggest Loss, MONEY, Longest Win Streak, Longest Loss Streak --}}
+
+ 
