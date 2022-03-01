@@ -4,9 +4,10 @@ const sequelize = require('../config/connection');
 
 const seed_generator = (length) => {
   var seed = '';
-  var library = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var library =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-  for ( var i = 0; i < length; i++ ) {
+  for (var i = 0; i < length; i++) {
     seed += library.charAt(Math.floor(Math.random() * library.length));
   }
   return seed;
@@ -37,7 +38,7 @@ User.init(
         len: [8],
       },
     },
-    
+
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -47,7 +48,7 @@ User.init(
     avatar_seed: {
       type: DataTypes.STRING,
       allowNull: true,
-    }
+    },
   },
   {
     hooks: {

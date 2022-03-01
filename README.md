@@ -12,8 +12,8 @@ Git-Lucky is a coin flip game where you can wager as little or as much as you're
 ### Links 
 ---------------
 
-[git-lucky Github URL]()
-[git-lucky Heroku URL]()
+[git-lucky Github URL](https://github.com/brysgithub/git-lucky)
+[git-lucky Heroku URL](https://git-lucky-project.herokuapp.com/login)
 
 
 ### User Story
