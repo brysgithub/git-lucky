@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 async function loadStats() {
 
   // render wins and losses
@@ -16,20 +17,3 @@ async function loadStats() {
 }
 
 loadStats();
-
-async function loadUsername() {
-
-  // render username
-  const response = await fetch(`/api/user/`, {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-  const username = await response.json();
-
-  const usernameTextEl = document.querySelector('#usernameText');
-
-  usernameTextEl.textContent = username.username;
-}
-
-loadUsername();
