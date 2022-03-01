@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { json } = require('express/lib/response');
 const { Transaction, Statistics } = require('../../models');
 
 router.get('/', async (req, res) => {
