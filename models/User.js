@@ -46,7 +46,7 @@ User.init(
     // Used to generate a random avatar on user creation
     avatar_seed: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     }
   },
   {
