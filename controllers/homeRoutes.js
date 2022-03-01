@@ -50,22 +50,26 @@ router.get('/leaderboard', withAuth, async (req, res) => {
   try {
     const biggestWinData = await Statistics.findAll({
       attributes: ['user_id', 'biggest_win'],
-      order: [['biggest_win', 'DESC']]
+      order: [['biggest_win', 'DESC']],
+      include: User,
     });
 
     const biggestLossData = await Statistics.findAll({
       attributes: ['user_id', 'biggest_loss'],
-      order: [['biggest_loss', 'ASC']]
+      order: [['biggest_loss', 'ASC']],
+      include: User,
     });
 
     const longestWinData = await Statistics.findAll({
       attributes: ['user_id', 'longest_win_streak'],
-      order: [['longest_win_streak', 'DESC']]
+      order: [['longest_win_streak', 'DESC']],
+      include: User,
     });
 
     const longestLoseData = await Statistics.findAll({
       attributes: ['user_id', 'longest_lose_streak'],
-      order: [['longest_lose_streak', 'DESC']]
+      order: [['longest_lose_streak', 'DESC']],
+      include: User,
     });
 
     const biggestWin = biggestWinData.map((funny) =>
@@ -84,6 +88,7 @@ router.get('/leaderboard', withAuth, async (req, res) => {
       funny.get({ plain: true })
     );
 
+    console.log(biggestWin);
     const leaderboards = [biggestWin, biggestLoss, longestWin, longestLose];
     console.log(leaderboards);
     res.render('leaderboard', {
