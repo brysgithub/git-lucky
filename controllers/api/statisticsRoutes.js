@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { json } = require('express/lib/response');
 const { Transaction, Statistics } = require('../../models');
 
 router.get('/', async (req, res) => {
@@ -9,6 +10,42 @@ router.get('/', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+// router.get('/biggestWin', async (req, res) => {
+//     try {
+        
+//         res.status(200).json(userStatistics);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
+// router.get('/biggestLoss', async (req, res) => {
+//     try {
+        
+//         res.status(200).json(userStatistics);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
+// router.get('/longestWin', async (req, res) => {
+//     try {
+        
+//         res.status(200).json(userStatistics);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
+// router.get('/longestLose', async (req, res) => {
+//     try {
+        
+//         res.status(200).json(userStatistics);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
 
 router.post('/update', async (req, res) => {
     try {

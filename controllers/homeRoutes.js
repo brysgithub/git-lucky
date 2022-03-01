@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Statistics } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -48,11 +48,51 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/leaderboard', withAuth, async (req, res) => {
   try {
-    // Pass serialized data and session flag into template
-    res.render('leaderboard', {
-      logged_in: req.session.logged_in 
+    const biggestWinData = await Statistics.findAll({
+      attributes: ['user_id', 'biggest_win'],
+      order: [['biggest_win', 'DESC']]
     });
 
+    const biggestLossData = await Statistics.findAll({
+      attributes: ['user_id', 'biggest_loss'],
+      order: [['biggest_loss', 'ASC']]
+    });
+
+    const longestWinData = await Statistics.findAll({
+      attributes: ['user_id', 'longest_win_streak'],
+      order: [['longest_win_streak', 'DESC']]
+    });
+
+    const longestLoseData = await Statistics.findAll({
+      attributes: ['user_id', 'longest_lose_streak'],
+      order: [['longest_lose_streak', 'DESC']]
+    });
+
+    const biggestWin = biggestWinData.map((funny) =>
+      funny.get({ plain: true })
+    );
+
+    const biggestLoss = biggestLossData.map((funny) =>
+      funny.get({ plain: true })
+    );
+
+    const longestWin = longestWinData.map((funny) =>
+      funny.get({ plain: true })
+    );
+
+    const longestLose = longestLoseData.map((funny) =>
+      funny.get({ plain: true })
+    );
+
+    const leaderboards = [biggestWin, biggestLoss, longestWin, longestLose];
+    console.log(leaderboards);
+    res.render('leaderboard', {
+      biggestWin,
+      biggestLoss,
+      longestWin,
+      longestLose,
+      logged_in: true
+    });
   } catch (err) {
     res.status(500).json(err);
   }
